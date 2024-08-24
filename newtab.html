@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>New tab</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    </head>
+    <body>
+        <div class="color-selector">
+            <button class="colorbutton" data-color="#000000" style="background-color: #000000;" title="Black"></button>
+            <button class="colorbutton" data-color="#ffffff" style="background-color: #ffffff;" title="White"></button>
+            <button class="colorbutton" data-color="#FF0000" style="background-color: #ff0000;" title="Red"></button>
+            <button class="colorbutton" data-color="#00FF00" style="background-color: #00ff00;" title="Green"></button>
+            <button class="colorbutton" data-color="#0000FF" style="background-color: #0000ff;" title="Blue"></button>
+            <button class="colorbutton" data-color="#FFFF00" style="background-color: #ffff00;" title="Yellow"></button>
+            <button class="colorbutton" data-color="#00FFFF" style="background-color: #00ffff;" title="Cyan"></button>
+            <button class="colorbutton" data-color="#FF00FF" style="background-color: #ff00ff;" title="Magenta"></button>
+            <button class="colorbutton" data-color="#808080" style="background-color: #808080;" title="Gray"></button>
+            <button class="colorbutton" data-color="#A9A9A9" style="background-color: #A9A9A9;" title="Dark gray"></button>
+            <button class="colorbutton" data-color="#D3D3D3" style="background-color: #D3D3D3;" title="Light gray"></button>
+            <button class="colorbutton" data-color="#FFA500" style="background-color: #FFA500;" title="Orange"></button>
+            <button class="colorbutton" data-color="#A52A2A" style="background-color: #A52A2A;" title="Brown"></button>
+            <button class="colorbutton" data-color="#800080" style="background-color: #800080;" title="Purple"></button>
+            <button class="colorbutton" data-color="#FFC0CB" style="background-color: #FFC0CB;" title="Pink"></button>
+            <button class="colorbutton" data-color="#F5F5DC" style="background-color: #F5F5DC;" title="Beige"></button>
+            <button id="erasebutton" class="colorbutton" title="Erase your drawing"><img id="eraseimage" src="eraser.png"></button>
+        </div>
+        <canvas id="drawingCanvas"></canvas>
+        <script src="script.js" defer></script>
+    </body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+    .color-selector {
+        height: 50px;
+        background-color: #f0f0f0;
+        position: relative;
+        left: 3px;
+    }
+
+    canvas {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 50px);
+        border: 2px solid #000;
+        cursor: url('pen.png') 1 30, auto;
+    }
+
+    .colorbutton {
+        position: relative;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        top: 3px;
+    }
+
+    #erasebutton {
+        position: absolute;
+        top: 3px;
+        right: 10px;
+    }
+
+    #eraseimage {
+        height: 25px;
+        width: 25px;
+    }
+</style>
